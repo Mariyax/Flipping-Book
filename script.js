@@ -23,7 +23,7 @@ function openBook() {
 }
 
 function closeBook(isAtBeginning) {
-    if (isAtBeginning) {
+    if(isAtBeginning) {
         book.style.transform = "translateX(0%)";
     } else {
         book.style.transform = "translateX(100%)";
@@ -34,8 +34,8 @@ function closeBook(isAtBeginning) {
 }
 
 function goNextPage() {
-    if (currentLocation < maxLocation) {
-        switch (currentLocation) {
+    if(currentLocation < maxLocation) {
+        switch(currentLocation) {
             case 1:
                 openBook();
                 paper1.classList.add("flipped");
@@ -51,15 +51,15 @@ function goNextPage() {
                 closeBook(false);
                 break;
             default:
-                throw new Error("unknown state");
+                throw new Error("unkown state");
         }
         currentLocation++;
     }
 }
 
 function goPrevPage() {
-    if (currentLocation > 1) {
-        switch (currentLocation) {
+    if(currentLocation > 1) {
+        switch(currentLocation) {
             case 2:
                 closeBook(true);
                 paper1.classList.remove("flipped");
@@ -75,7 +75,7 @@ function goPrevPage() {
                 paper3.style.zIndex = 1;
                 break;
             default:
-                throw new Error("unknown state");
+                throw new Error("unkown state");
         }
 
         currentLocation--;
