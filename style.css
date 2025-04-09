@@ -11,7 +11,16 @@ body {
     align-items: center;
 
     font-family: sans-serif;
-    background-color: powderblue;
+    background-color: #819CCD; /* Updated to match the page background color */
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px; /* Adjust the size of the logo */
+    height: auto;
 }
 
 /* Book */
@@ -20,8 +29,12 @@ body {
     width: 350px;
     height: 500px;
     transition: transform 0.5s;
+    background-color: #819CCD; /* Matching background color */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slight shadow for book effect */
 }
 
+/* Paper (front and back) */
 .paper {
     position: absolute;
     width: 100%;
@@ -29,11 +42,12 @@ body {
     top: 0;
     left: 0;
     perspective: 1500px;
+    background-color: #819CCD; /* Matching background color for the paper */
 }
 
 .front,
 .back {
-    background-color: white;
+    background-color: #819CCD; /* Ensures the front and back match the background */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -41,12 +55,12 @@ body {
     left: 0;
     transform-origin: left;
     transition: transform 0.5s;
+    border-radius: 10px;
 }
 
 .front {
     z-index: 1;
     backface-visibility: hidden;
-    border-left: 3px solid powderblue;
 }
 
 .back {
@@ -64,8 +78,8 @@ body {
 }
 
 .front-content img, .back-content img {
-    width: 100%;
-    height: 100%;
+    width: 100%;  /* Ensures the image spans the full width of the page */
+    height: 100%; /* Ensures the image spans the full height of the page */
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
@@ -99,4 +113,13 @@ i {
 
 /* Paper stack order */
 #p1 {
-    z
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
