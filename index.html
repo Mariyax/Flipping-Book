@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book</title>
-    <link rel="stylesheet" href="./style3.css">
-    <script src="https://kit.fontawesome.com/1951939773.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Left Arrow for Navigation -->
-    <button id="prev-btn" class="arrow-btn">
-        <i class="fa-solid fa-arrow-left"></i>
+    <!-- Previous Button -->
+    <button id="prev-btn">
+        <i class="fas fa-arrow-circle-left"></i>
     </button>
 
     <!-- Book -->
@@ -23,11 +24,6 @@
                     <img src="https://github.com/Mariyax/Flipping-Book/blob/main/chapter-1.jpg?raw=true" alt="Chapter 1 Image">
                 </div>
             </div>
-            <div class="back">
-                <div id="b1" class="back-content">
-                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/chapter-1.jpg?raw=true" alt="Chapter 1 Back Image">
-                </div>
-            </div>
         </div>
 
         <!-- Paper 2 - The End -->
@@ -35,11 +31,6 @@
             <div class="front">
                 <div id="f2" class="front-content">
                     <img src="https://github.com/Mariyax/Flipping-Book/blob/main/the-end.jpg?raw=true" alt="The End Image">
-                </div>
-            </div>
-            <div class="back">
-                <div id="b2" class="back-content">
-                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/the-end.jpg?raw=true" alt="The End Back Image">
                 </div>
             </div>
         </div>
@@ -51,69 +42,12 @@
                     <img src="https://github.com/Mariyax/Flipping-Book/blob/main/Mesu-ai.jpg?raw=true" alt="Mesu AI Image">
                 </div>
             </div>
-            <div class="back">
-                <div id="b3" class="back-content">
-                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/Mesu-ai.jpg?raw=true" alt="Mesu AI Back Image">
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- Right Arrow for Navigation -->
-    <button id="next-btn" class="arrow-btn">
-        <i class="fa-solid fa-arrow-right"></i>
+    <!-- Next Button -->
+    <button id="next-btn">
+        <i class="fas fa-arrow-circle-right"></i>
     </button>
-
-    <script>
-        // JavaScript to manage page flipping
-
-        const prevBtn = document.querySelector("#prev-btn");
-        const nextBtn = document.querySelector("#next-btn");
-        const book = document.querySelector("#book");
-
-        const paper1 = document.querySelector("#p1");
-        const paper2 = document.querySelector("#p2");
-        const paper3 = document.querySelector("#p3");
-
-        let currentPage = 1;
-
-        // Event Listeners for buttons
-        prevBtn.addEventListener("click", flipPrevPage);
-        nextBtn.addEventListener("click", flipNextPage);
-
-        function flipNextPage() {
-            if (currentPage < 3) {
-                currentPage++;
-                updatePages();
-            }
-        }
-
-        function flipPrevPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                updatePages();
-            }
-        }
-
-        // Function to update the flipping logic based on the current page
-        function updatePages() {
-            // Reset flip classes for all papers
-            paper1.classList.remove("flipped");
-            paper2.classList.remove("flipped");
-            paper3.classList.remove("flipped");
-
-            // Add flip class to the current page
-            if (currentPage === 1) {
-                paper1.classList.add("flipped");
-            } else if (currentPage === 2) {
-                paper2.classList.add("flipped");
-            } else if (currentPage === 3) {
-                paper3.classList.add("flipped");
-            }
-        }
-
-        // Initial call to update pages
-        updatePages();
-    </script>
 </body>
 </html>
