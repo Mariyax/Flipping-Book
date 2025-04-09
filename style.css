@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: #81A8DE; /* Background color as provided */
+    background-color: #81A8DE; /* Light blue background */
 }
 
 /* Book */
@@ -20,7 +20,6 @@ body {
     height: 500px;
     transition: transform 0.5s;
     background-color: transparent; /* Transparent background */
-    border-radius: 10px;
 }
 
 /* Paper (front) */
