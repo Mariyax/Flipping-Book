@@ -1,83 +1,69 @@
-// References to DOM Elements
-const prevBtn = document.querySelector("#prev-btn");
-const nextBtn = document.querySelector("#next-btn");
-const book = document.querySelector("#book");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+    <!-- Font Awesome Kit for Icons -->
+    <script src="https://kit.fontawesome.com/1951939773.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Previous Button -->
+    <button id="prev-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
 
-const paper1 = document.querySelector("#p1");
-const paper2 = document.querySelector("#p2");
-const paper3 = document.querySelector("#p3");
+    <!-- Book -->
+    <div id="book" class="book">
+        <!-- Paper 1 - Chapter 1 -->
+        <div id="p1" class="paper">
+            <div class="front">
+                <div id="f1" class="front-content">
+                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/chapter-1.jpg?raw=true" alt="Chapter 1 Image">
+                </div>
+            </div>
+            <div class="back">
+                <div id="b1" class="back-content">
+                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/chapter-1.jpg?raw=true" alt="Chapter 1 Back Image">
+                </div>
+            </div>
+        </div>
 
-// Event Listener
-prevBtn.addEventListener("click", goPrevPage);
-nextBtn.addEventListener("click", goNextPage);
+        <!-- Paper 2 - The End -->
+        <div id="p2" class="paper">
+            <div class="front">
+                <div id="f2" class="front-content">
+                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/the-end.jpg?raw=true" alt="The End Image">
+                </div>
+            </div>
+            <div class="back">
+                <div id="b2" class="back-content">
+                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/the-end.jpg?raw=true" alt="The End Back Image">
+                </div>
+            </div>
+        </div>
 
-// Business Logic
-let currentLocation = 1;
-let numOfPapers = 3;
-let maxLocation = numOfPapers + 1;
+        <!-- Paper 3 - Mesu AI -->
+        <div id="p3" class="paper">
+            <div class="front">
+                <div id="f3" class="front-content">
+                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/Mesu-ai.jpg?raw=true" alt="Mesu AI Image">
+                </div>
+            </div>
+            <div class="back">
+                <div id="b3" class="back-content">
+                    <img src="https://github.com/Mariyax/Flipping-Book/blob/main/Mesu-ai.jpg?raw=true" alt="Mesu AI Back Image">
+                </div>
+            </div>
+        </div>
+    </div>
 
-function openBook() {
-    book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
-}
-
-function closeBook(isAtBeginning) {
-    if (isAtBeginning) {
-        book.style.transform = "translateX(0%)";
-    } else {
-        book.style.transform = "translateX(100%)";
-    }
-    
-    prevBtn.style.transform = "translateX(0px)";
-    nextBtn.style.transform = "translateX(0px)";
-}
-
-function goNextPage() {
-    if (currentLocation < maxLocation) {
-        switch (currentLocation) {
-            case 1:
-                openBook();
-                paper1.classList.add("flipped");
-                paper1.style.zIndex = 1;
-                break;
-            case 2:
-                paper2.classList.add("flipped");
-                paper2.style.zIndex = 2;
-                break;
-            case 3:
-                paper3.classList.add("flipped");
-                paper3.style.zIndex = 3;
-                closeBook(false);
-                break;
-            default:
-                throw new Error("unknown state");
-        }
-        currentLocation++;
-    }
-}
-
-function goPrevPage() {
-    if (currentLocation > 1) {
-        switch (currentLocation) {
-            case 2:
-                closeBook(true);
-                paper1.classList.remove("flipped");
-                paper1.style.zIndex = 3;
-                break;
-            case 3:
-                paper2.classList.remove("flipped");
-                paper2.style.zIndex = 2;
-                break;
-            case 4:
-                openBook();
-                paper3.classList.remove("flipped");
-                paper3.style.zIndex = 1;
-                break;
-            default:
-                throw new Error("unknown state");
-        }
-
-        currentLocation--;
-    }
-}
+    <!-- Next Button -->
+    <button id="next-btn">
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+</body>
+</html>
