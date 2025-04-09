@@ -79,13 +79,25 @@ body {
     transform: rotateY(-180deg);
 }
 
-/* Controller Buttons */
-button {
+/* Controller Buttons (Arrows) */
+.arrow-btn {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 10px;
-    transition: transform 0.5s;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    font-size: 30px;
+    color: gray;
+    transform: translateY(-50%);
+}
+
+#prev-btn {
+    left: -50px; /* Position left arrow on the left side */
+}
+
+#next-btn {
+    right: -50px; /* Position right arrow on the right side */
 }
 
 button:focus {
@@ -113,3 +125,4 @@ i {
 #p3 {
     z-index: 1;
 }
+
