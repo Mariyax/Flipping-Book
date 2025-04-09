@@ -9,9 +9,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-family: sans-serif;
-    background-color: #819CCD; /* Updated to match the page background color */
+    background-color: #819CCD; /* Background color for consistency */
 }
 
 /* Logo */
@@ -19,7 +18,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 50px; /* Adjust the size of the logo */
+    width: 50px; /* Adjust logo size */
     height: auto;
 }
 
@@ -29,12 +28,12 @@ body {
     width: 350px;
     height: 500px;
     transition: transform 0.5s;
-    background-color: #819CCD; /* Matching background color */
+    background-color: #819CCD; /* Ensure background consistency */
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slight shadow for book effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
 }
 
-/* Paper (front and back) */
+/* Paper */
 .paper {
     position: absolute;
     width: 100%;
@@ -42,12 +41,12 @@ body {
     top: 0;
     left: 0;
     perspective: 1500px;
-    background-color: #819CCD; /* Matching background color for the paper */
+    background-color: #819CCD;
 }
 
 .front,
 .back {
-    background-color: #819CCD; /* Ensures the front and back match the background */
+    background-color: #819CCD; /* Ensure the front and back of pages have matching background */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -77,10 +76,11 @@ body {
     overflow: hidden;
 }
 
+/* Ensuring the images fill the entire page and cover the space */
 .front-content img, .back-content img {
-    width: 100%;  /* Ensures the image spans the full width of the page */
-    height: 100%; /* Ensures the image spans the full height of the page */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the full area without distortion */
 }
 
 /* Paper flip effect */
