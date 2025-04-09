@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: #81A8DE; /* Background color as provided */
+    background-color: #81A8DE; /* Light blue background */
 }
 
 /* Book */
@@ -51,7 +51,7 @@ body {
 .front-content img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the page without distortion */
+    object-fit: cover; /* Ensures the image fills the page */
     border-radius: 0; /* No rounded corners */
 }
 
@@ -59,48 +59,4 @@ body {
 button {
     border: none;
     background-color: transparent;
-    cursor: pointer;
-    margin: 10px;
-    transition: transform 0.5s;
-}
-
-button:focus {
-    outline: none;
-}
-
-button:hover i {
-    color: #636363;
-}
-
-i {
-    font-size: 50px;
-    color: gray;
-}
-
-/* Arrows outside the book */
-#prev-btn {
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#next-btn {
-    position: absolute;
-    right: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Paper stack order */
-#p1 {
-    z-index: 3;
-}
-
-#p2 {
-    z-index: 2;
-}
-
-#p3 {
-    z-index: 1;
-}
+    cursor: pointer
