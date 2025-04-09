@@ -9,8 +9,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-family: sans-serif;
-    background-color: #81A8DE; /* Light blue background */
+    background-color: #81A8DE;
 }
 
 /* Book */
@@ -19,26 +20,21 @@ body {
     width: 350px;
     height: 500px;
     transition: transform 0.5s;
-    border: 3px solid #fff; /* White border to enhance the book appearance */
-    border-radius: 15px; /* Rounded corners for a soft look */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
-/* Paper */
 .paper {
-    display: none; /* Hide all pages initially */
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     perspective: 1500px;
+
 }
 
-/* Front and Back of the Paper */
 .front,
 .back {
-    background-color: #f8f8f8; /* Light gray background to reduce harshness */
+    background-color: #81A8DE;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -46,20 +42,18 @@ body {
     left: 0;
     transform-origin: left;
     transition: transform 0.5s;
-    border-radius: 10px; /* Soft rounded corners for the paper */
 }
 
 .front {
     z-index: 1;
     backface-visibility: hidden;
-    border-left: 3px solid #81A8DE; /* Matching border with background color */
+    border-left: 3px solid #81A8DE;
 }
 
 .back {
     z-index: 0;
 }
 
-/* Content alignment */
 .front-content,
 .back-content {
     width: 100%;
@@ -67,12 +61,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
-/* Flip effect */
 .back-content {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg)
 }
 
 /* Paper flip effect */
@@ -81,16 +73,13 @@ body {
     transform: rotateY(-180deg);
 }
 
-/* Controller Buttons (Arrows) */
+/* Controller Buttons */
 button {
     border: none;
     background-color: transparent;
     cursor: pointer;
     margin: 10px;
     transition: transform 0.5s;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 button:focus {
@@ -99,14 +88,6 @@ button:focus {
 
 button:hover i {
     color: #636363;
-}
-
-#prev-btn {
-    left: -40px; /* Move the left arrow slightly outside */
-}
-
-#next-btn {
-    right: -40px; /* Move the right arrow slightly outside */
 }
 
 i {
