@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: #81A8DE; /* Updated to match the provided blue color */
+    background-color: #81A8DE; /* Background color as provided */
 }
 
 /* Book */
@@ -19,85 +19,48 @@ body {
     width: 350px;
     height: 500px;
     transition: transform 0.5s;
-    background-color: transparent; /* Set book background to transparent */
+    background-color: transparent; /* Transparent background */
     border-radius: 10px;
 }
 
-/* Paper (front and back) */
+/* Paper (front) */
 .paper {
+    display: none; /* Hide all pages initially */
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     perspective: 1500px;
-    background-color: transparent; /* Ensure the paper has a transparent background */
+    background-color: transparent; /* Transparent background */
 }
 
-.front,
-.back {
-    background-color: transparent; /* No background color for the front and back of pages */
+.front {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     transform-origin: left;
-    transition: transform 0.5s;
-    border-radius: 10px;
-}
-
-.front {
-    z-index: 1;
     backface-visibility: hidden;
-}
-
-.back {
-    z-index: 0;
-}
-
-.front-content,
-.back-content {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
-/* Ensuring the images fill the entire page and cover the space */
-.front-content img, .back-content img {
+.front-content img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers the full area without distortion */
-}
-
-/* Paper flip effect */
-.flipped .front,
-.flipped .back {
-    transform: rotateY(-180deg);
+    object-fit: cover; /* Ensures the image fills the page */
 }
 
 /* Controller Buttons (Arrows) */
-.arrow-btn {
+button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    z-index: 2;
-    font-size: 30px;
-    color: gray;
-    transform: translateY(-50%);
-}
-
-#prev-btn {
-    left: -50px; /* Position left arrow on the left side */
-}
-
-#next-btn {
-    right: -50px; /* Position right arrow on the right side */
+    margin: 10px;
+    transition: transform 0.5s;
 }
 
 button:focus {
@@ -113,6 +76,21 @@ i {
     color: gray;
 }
 
+/* Arrows outside the book */
+#prev-btn {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#next-btn {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* Paper stack order */
 #p1 {
     z-index: 3;
@@ -125,4 +103,3 @@ i {
 #p3 {
     z-index: 1;
 }
-
