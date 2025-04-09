@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: #819CCD; /* Background color for consistency */
+    background-color: #81A8DE; /* Updated to match the provided blue color */
 }
 
 /* Logo */
@@ -28,12 +28,12 @@ body {
     width: 350px;
     height: 500px;
     transition: transform 0.5s;
-    background-color: #819CCD; /* Ensure background consistency */
+    background-color: #81A8DE; /* Matching background color */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
 }
 
-/* Paper */
+/* Paper (front and back) */
 .paper {
     position: absolute;
     width: 100%;
@@ -41,12 +41,12 @@ body {
     top: 0;
     left: 0;
     perspective: 1500px;
-    background-color: #819CCD;
+    background-color: #81A8DE; /* Matching background color for the paper */
 }
 
 .front,
 .back {
-    background-color: #819CCD; /* Ensure the front and back of pages have matching background */
+    background-color: #81A8DE; /* Ensure the front and back of pages have matching background */
     position: absolute;
     width: 100%;
     height: 100%;
