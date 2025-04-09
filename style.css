@@ -102,11 +102,11 @@ button:hover i {
 }
 
 #prev-btn {
-    left: -10px; /* Move the left arrow closer to the book */
+    left: -40px; /* Move the left arrow slightly outside */
 }
 
 #next-btn {
-    right: -10px; /* Move the right arrow closer to the book */
+    right: -40px; /* Move the right arrow slightly outside */
 }
 
 i {
