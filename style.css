@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: #81A8DE; /* Light blue background */
+    background-color: #81A8DE; /* Background color as provided */
 }
 
 /* Book */
@@ -47,10 +47,12 @@ body {
     align-items: center;
 }
 
+/* Remove border-radius to avoid rounded corners */
 .front-content img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the page */
+    object-fit: cover; /* Ensures the image fills the page without distortion */
+    border-radius: 0; /* No rounded corners */
 }
 
 /* Controller Buttons (Arrows) */
